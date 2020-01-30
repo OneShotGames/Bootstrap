@@ -37,7 +37,7 @@
 namespace pt = boost::property_tree;
 
 #define BOOTSTRAP_JSON_FILE "Bootstrap.json"
-#define BOOTSTRAP_JSON_DIR "https://raw.githubusercontent.com/aimrebirth/Bootstrap/master/"
+#define BOOTSTRAP_JSON_DIR "https://raw.githubusercontent.com/OneShotGames/Bootstrap/master/"
 #define BOOTSTRAP_JSON_URL BOOTSTRAP_JSON_DIR BOOTSTRAP_JSON_FILE
 
 extern const int BOOTSTRAPPER_VERSION;

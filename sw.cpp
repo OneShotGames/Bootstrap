@@ -28,38 +28,11 @@ void build(Solution &s)
     core.Public += "pub.egorpugin.primitives.executor-master"_dep;
     core.Public += "pub.egorpugin.primitives.sw.main-master"_dep;
 
-    {
-        auto &t = p.addTarget<Executable>("developer");
-        t.CPPVersion = CPPLanguageStandard::CPP17;
-        t += "src/bootstrap_developer.cpp";
-        t += core;
-    }
 
     {
         auto &t = p.addTarget<Executable>("release");
         t.CPPVersion = CPPLanguageStandard::CPP17;
         t += "src/bootstrap_release.cpp";
-        t += core;
-    }
-
-    {
-        auto &t = p.addTarget<Executable>("tools");
-        t.CPPVersion = CPPLanguageStandard::CPP17;
-        t += "src/bootstrap_tools.cpp";
-        t += core;
-    }
-
-    {
-        auto &t = p.addTarget<Executable>("updater", "0.0.1");
-        t.CPPVersion = CPPLanguageStandard::CPP17;
-        t += "src/updater.cpp";
-        t += core;
-    }
-
-    {
-        auto &t = p.addTarget<Executable>("remove_untracked_content");
-        t.CPPVersion = CPPLanguageStandard::CPP17;
-        t += "src/remove_untracked_content.cpp";
         t += core;
     }
 }
