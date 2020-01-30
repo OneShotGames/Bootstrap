@@ -45,7 +45,7 @@ extern const int BOOTSTRAP_UPDATER_VERSION;
 extern const int UNTRACKED_CONTENT_DELETER_VERSION;
 extern const int BOOTSTRAPPER_TOOLS;
 
-#define POLYGON4_NAME "Polygon4"
+#define POLYGON4_NAME "Polygon"
 #define BOOTSTRAP_PREFIX path("..")
 #define BOOTSTRAP_DOWNLOADS path("BootstrapDownloads")
 #define BOOTSTRAP_PROGRAMS path("BootstrapPrograms")

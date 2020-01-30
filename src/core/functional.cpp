@@ -339,7 +339,7 @@ void download_files(const path &dir, const path &output_dir, const ptree &data)
 void init()
 {
     fs::create_directory(BOOTSTRAP_DOWNLOADS);
-    fs::create_directory(BOOTSTRAP_PROGRAMS);
+ //   fs::create_directory(BOOTSTRAP_PROGRAMS);
 }
 
 void manual_download_sources(const path &dir, const ptree &data)

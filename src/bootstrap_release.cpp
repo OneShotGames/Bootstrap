@@ -30,37 +30,37 @@ int version()
 
 void print_version()
 {
-    LOG_INFO(logger, "Polygon-4 Release Bootstrapper Version " << version());
+    LOG_INFO(logger, "Polygon Bootstrapper Version " << version());
 }
 
-void check_version(int ver)
-{
-    if (ver == version())
-        return;
-    LOG_FATAL(logger, "You have wrong version of bootstrapper!");
-    LOG_FATAL(logger, "Actual version: " << ver);
-    LOG_FATAL(logger, "Your version: " << version());
-    LOG_FATAL(logger, "Please, run BootstrapUpdater.exe to update the bootstrapper.");
-    exit_program(1);
-}
+//void check_version(int ver)
+//{
+//    if (ver == version())
+//        return;
+//    LOG_FATAL(logger, "You have wrong version of bootstrapper!");
+//    LOG_FATAL(logger, "Actual version: " << ver);
+//    LOG_FATAL(logger, "Your version: " << version());
+//    LOG_FATAL(logger, "Please, run BootstrapUpdater.exe to update the bootstrapper.");
+//    exit_program(1);
+//}
 
 int bootstrap_module_main(int argc, char *argv[], const ptree &data)
 {
     init();
-    check_version(data.get<int>("bootstrap.version"));
+//    check_version(data.get<int>("bootstrap.version"));
 
     auto polygon4 = path(data.get<String>("name") + "Release");
     auto base_dir = fs::current_path();
     auto polygon4_dir = base_dir / polygon4;
     auto download_dir = base_dir / BOOTSTRAP_DOWNLOADS;
 
-    fs::create_directory(polygon4_dir);
-    download_files(download_dir, polygon4, data.get_child("release"));
+//    fs::create_directory(polygon4_dir);
+    download_files(download_dir, base_dir, data.get_child("release"));
 
-    remove_untracked(data.get_child("release"), polygon4_dir, polygon4_dir / "Engine" / "Plugins");
-    remove_untracked(data.get_child("release"), polygon4_dir, polygon4_dir / "Polygon4" / "Plugins");
+//    remove_untracked(data.get_child("release"), polygon4_dir, polygon4_dir / "Engine" / "Plugins");
+ //   remove_untracked(data.get_child("release"), polygon4_dir, polygon4_dir / "Polygon4" / "Plugins");
 
-    LOG_INFO(logger, "Bootstraped Polygon-4 Release successfully");
+    LOG_INFO(logger, "Bootstraped Polygon successfully");
 
     return 0;
 }

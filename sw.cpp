@@ -9,7 +9,7 @@ void configure(Build &s)
 
 void build(Solution &s)
 {
-    auto &p = s.addProject("Polygon4.Bootstrap", "0.0.12");
+    auto &p = s.addProject("Polygon.Bootstrap", "0.0.1");
     p += Git("https://github.com/aimrebirth/Bootstrap", "", "{v}");
 
     auto &core = p.addTarget<StaticLibrary>("core");
